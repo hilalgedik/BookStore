@@ -5,11 +5,11 @@ using WebApi.DBOperations;
 
 namespace WebApi.BookOperations.GetBooks
 {
-    public class GetByIdBookCommand
+    public class GetByIdBookQuery
     {
         public int id {get; set;}
         private readonly BookStoreDbContext _dbContext;
-        public GetByIdBookCommand(BookStoreDbContext dbContext)
+        public GetByIdBookQuery(BookStoreDbContext dbContext)
         {
             _dbContext=dbContext;
 
