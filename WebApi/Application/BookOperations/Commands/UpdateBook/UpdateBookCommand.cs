@@ -6,7 +6,7 @@ using WebApi.Common;
 using WebApi.DBOperations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApi.BookOperations.UpdateBook
+namespace WebApi.Application.BookOperations.Commands.UpdateBook
 {
     public class UpdateBookCommand
     {
@@ -34,8 +34,7 @@ namespace WebApi.BookOperations.UpdateBook
 
         public class UpdateBookModel
         {
-            // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-            //public int Id {get; set;}
+            
             public int GenreId { get; set; }
             public int PageCount { get; set; }
             public DateTime PublishDate { get; set; }

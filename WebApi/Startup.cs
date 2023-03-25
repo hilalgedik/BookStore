@@ -38,9 +38,9 @@ namespace WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
 
-            services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName:"BookStoreDB"));
+            services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDB"));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddSingleton<ILoggerService,ConsoleLogger>();
+            services.AddSingleton<ILoggerService, ConsoleLogger>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +50,14 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
+    //             app.UseSwagger(c =>
+    //    {
+    //        c.RouteTemplate = "/swagger/{WebApi v1}/swagger.json";
+    //    });
+
+
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/v1/swagger.json", "WebApi v1"));
             }
 
             app.UseHttpsRedirection();
