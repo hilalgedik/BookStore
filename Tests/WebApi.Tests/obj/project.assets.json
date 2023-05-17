@@ -7565,6 +7565,8 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "FluentAssertions >= 5.10.3",
+      "Microsoft.EntityFrameworkCore >= 5.0.6",
+      "Microsoft.EntityFrameworkCore.InMemory >= 5.0.6",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "Moq >= 4.16.1",
       "WebApi >= 1.0.0",
@@ -7630,6 +7632,14 @@
             "target": "Package",
             "version": "[5.10.3, )"
           },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.6, )"
+          },
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[5.0.6, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.3.2, )"
@@ -7671,7 +7681,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
