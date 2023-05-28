@@ -20,7 +20,7 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
             _mapper = mapper;
         }
 
-        public GetAuthorByIdViewModel Handle()
+        public  GetAuthorByIdViewModel Handle()
         {
             var author = _context.Authors.Include(x=>x.Book).SingleOrDefault(x => x.Id == AuthorId);
 
@@ -29,7 +29,7 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
             {
                 throw new InvalidOperationException("Yazar bulunamadi");
             }
-            return _mapper.Map<GetAuthorByIdViewModel>(author);
+             return _mapper.Map<GetAuthorByIdViewModel>(author);
         }
 
     }

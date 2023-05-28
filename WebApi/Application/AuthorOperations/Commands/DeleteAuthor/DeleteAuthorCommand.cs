@@ -32,36 +32,56 @@ namespace WebApi.Application.AuthorOperations.Commands.DeleteAuthor
         //     Book = b,
         //     Birthday = a.Author.Birthday
         // }).SingleOrDefault(x => x.Id == AuthorId);
-          var author = _dbContext.Authors.Include(x=>x.Book).SingleOrDefault(x => x.Id == AuthorId);
 
-            if (author is null)
-                throw new InvalidOperationException("Silinecek yazar Bulunamadi.");
+        /////////
+        //   var author = _dbContext.Authors.Include(x=>x.Book).SingleOrDefault(x => x.Id == AuthorId);
 
-            author = _dbContext.Authors.GroupJoin(
-        _dbContext.Books,
-        a => a.BookId,
-        b => b.Id,
-        (a, b) => new { Author = a, Books = b })
-         .SelectMany(
-        ab => ab.Books.DefaultIfEmpty(),
-        (a, b) => new Author
-        {
-            Id = a.Author.Id,
-            Name = a.Author.Name,
-            Surname = a.Author.Surname,
-            Book = b,
-            Birthday = a.Author.Birthday
-        }).SingleOrDefault(x => x.Id == AuthorId && x.Book != null);
+        //     if (author is null)
+        //         throw new InvalidOperationException("Silinecek yazar Bulunamadi.");
+
+        //     author = _dbContext.Authors.GroupJoin(
+        // _dbContext.Books,
+        // a => a.BookId,
+        // b => b.Id,
+        // (a, b) => new { Author = a, Books = b })
+        //  .SelectMany(
+        // ab => ab.Books.DefaultIfEmpty(),
+        // (a, b) => new Author
+        // {
+        //     Id = a.Author.Id,
+        //     Name = a.Author.Name,
+        //     Surname = a.Author.Surname,
+        //     Book = b,
+        //     Birthday = a.Author.Birthday
+        // }).SingleOrDefault(x => x.Id == AuthorId && x.Book != null);
         
-            if (author is not null)
-                throw new InvalidOperationException("Silinecek yazarin kitabi bulunduğundan silinemez.");
-            _dbContext.Authors.Remove(author);
-            _dbContext.SaveChanges();
+        //     if (author is not null)
+        //         throw new InvalidOperationException("Silinecek yazarin kitabi bulunduğundan silinemez.");
+        //     _dbContext.Authors.Remove(author);
+        //     _dbContext.SaveChanges();
+
+        
+     
+
+    var author = _dbContext.Authors
+        .Include(x => x.Book)
+        .SingleOrDefault(x => x.Id == AuthorId);
+
+    if (author is null)
+        throw new InvalidOperationException("Silinecek yazar Bulunamadi.");
+
+    var book = author.Book;
+
+    if (book is not null)
+        throw new InvalidOperationException("Silinecek yazarin kitabi bulunduğundan silinemez.");
+
+    _dbContext.Authors.Remove(author);
+    _dbContext.SaveChanges();
+
+
+
 
         }
-
-
-
 
     }
 

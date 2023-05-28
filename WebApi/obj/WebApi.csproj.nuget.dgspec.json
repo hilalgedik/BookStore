@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "c:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\hilal\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\hilal\\OneDrive\\Belgeler\\Visual Studio Code\\Pratikler\\BookStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
